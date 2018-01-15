@@ -22,9 +22,7 @@ public abstract class Vehicle {
         this.healthValue = healthValue;
     }
 
-//    public abstract void attack(Kaiju kaiju);
-
-    public void attack(Kaiju kaiju){
+    public void ramAttack(Kaiju kaiju){
         int damage = kaiju.healthValue - this.attackValue;
         kaiju.setHealthValue(damage);
     }
@@ -32,4 +30,5 @@ public abstract class Vehicle {
     public int getAttackValue() {
         return this.attackValue;
     }
+
 }

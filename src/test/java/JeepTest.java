@@ -30,8 +30,14 @@ public class JeepTest {
     }
 
     @Test
-    public void canAttack(){
-        jeep.attack(gojira);
+    public void canRamAttack(){
+        jeep.ramAttack(gojira);
         assertEquals(90, gojira.getHealthValue());
+    }
+
+    @Test
+    public void canMinigunAttack(){
+        jeep.minigunAttack(gojira);
+        assertEquals(85, gojira.getHealthValue());
     }
 }

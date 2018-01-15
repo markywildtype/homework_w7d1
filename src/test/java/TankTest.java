@@ -31,7 +31,13 @@ public class TankTest {
 
     @Test
     public void canAttack(){
-        tank.attack(rodan);
+        tank.ramAttack(rodan);
         assertEquals(80, rodan.getHealthValue());
+    }
+
+    @Test
+    public void canRocketAttack(){
+        tank.rocketAttack(rodan);
+        assertEquals(70, rodan.getHealthValue());
     }
 }
