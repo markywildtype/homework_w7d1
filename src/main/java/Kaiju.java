@@ -23,7 +23,9 @@ public abstract class Kaiju {
     }
 
     public void setHealthValue(int healthValue){
-        this.healthValue = healthValue;
+        if(healthValue < 0) {
+            this.healthValue = 0;
+        } else { this.healthValue = healthValue; }
     }
 
     public int getAttackValue() {

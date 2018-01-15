@@ -19,7 +19,9 @@ public abstract class Vehicle {
     }
 
     public void setHealthValue(int healthValue) {
-        this.healthValue = healthValue;
+        if(healthValue < 0) {
+            this.healthValue = 0;
+        } else { this.healthValue = healthValue; }
     }
 
     public void ramAttack(Kaiju kaiju){
@@ -30,5 +32,4 @@ public abstract class Vehicle {
     public int getAttackValue() {
         return this.attackValue;
     }
-
 }

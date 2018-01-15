@@ -40,4 +40,12 @@ public class JeepTest {
         jeep.minigunAttack(gojira);
         assertEquals(85, gojira.getHealthValue());
     }
+
+    @Test
+    public void healthValueCannotBeNegative(){
+        gojira.attack(jeep);
+        gojira.attack(jeep);
+        gojira.attack(jeep);
+        assertEquals(0, jeep.healthValue);
+    }
 }

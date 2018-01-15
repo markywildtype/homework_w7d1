@@ -5,8 +5,8 @@ import static org.junit.Assert.assertEquals;
 
 public class GiantLizardTest {
 
-    GiantLizard gojira;
-    Vehicle jeep;
+    Kaiju gojira;
+    Jeep jeep;
 
     @Before
     public void before(){
@@ -43,5 +43,18 @@ public class GiantLizardTest {
     @Test
     public void canMove(){
         assertEquals("Gojira STOMP!", gojira.move());
+    }
+
+    @Test
+    public void healthValueCannotBeNegative(){
+        jeep.minigunAttack(gojira);
+        jeep.minigunAttack(gojira);
+        jeep.minigunAttack(gojira);
+        jeep.minigunAttack(gojira);
+        jeep.minigunAttack(gojira);
+        jeep.minigunAttack(gojira);
+        jeep.minigunAttack(gojira);
+        assertEquals(0, gojira.getHealthValue());
+
     }
 }
