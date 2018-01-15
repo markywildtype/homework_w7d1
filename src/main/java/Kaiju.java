@@ -25,4 +25,9 @@ public abstract class Kaiju {
     public int getAttackValue() {
         return this.attackValue;
     }
+
+    public void attack(Vehicle vehicle){
+        int damage = vehicle.getHealthValue() - this.attackValue;
+        vehicle.setHealthValue(damage);
+    }
 }

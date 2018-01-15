@@ -6,10 +6,12 @@ import static org.junit.Assert.assertEquals;
 public class GiantLizardTest {
 
     GiantLizard gojira;
+    Vehicle jeep;
 
     @Before
     public void before(){
         gojira = new GiantLizard("Gojira", 100, 25);
+        jeep = new Jeep("Jeep", 50);
     }
 
     @Test
@@ -30,5 +32,11 @@ public class GiantLizardTest {
     @Test
     public void canRoar(){
         assertEquals("Gojira ROOOAAAR!!!", gojira.roar());
+    }
+
+    @Test
+    public void canAttack(){
+        gojira.attack(jeep);
+        assertEquals(25, jeep.getHealthValue());
     }
 }
