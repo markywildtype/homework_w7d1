@@ -1,6 +1,6 @@
 public abstract class Kaiju {
 
-    private String name;
+    protected String name;
     protected int healthValue;
     protected int attackValue;
 
@@ -14,4 +14,15 @@ public abstract class Kaiju {
         return "ROOOAAAR!!!";
     }
 
+    public String getName() {
+        return this.name;
+    }
+
+    public int getHealthValue() {
+        return this.healthValue;
+    }
+
+    public int getAttackValue() {
+        return this.attackValue;
+    }
 }
