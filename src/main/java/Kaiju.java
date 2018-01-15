@@ -22,6 +22,10 @@ public abstract class Kaiju {
         return this.healthValue;
     }
 
+    public void setHealthValue(int healthValue){
+        this.healthValue = healthValue;
+    }
+
     public int getAttackValue() {
         return this.attackValue;
     }
@@ -30,4 +34,7 @@ public abstract class Kaiju {
         int damage = vehicle.getHealthValue() - this.attackValue;
         vehicle.setHealthValue(damage);
     }
+
+    public abstract String move();
+
 }

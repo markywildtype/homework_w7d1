@@ -2,10 +2,12 @@ public abstract class Vehicle {
 
     protected String type;
     protected int healthValue;
+    protected int attackValue;
 
-    public Vehicle(String type, int healthValue){
+    public Vehicle(String type, int healthValue, int attackValue){
         this.type = type;
         this.healthValue = healthValue;
+        this.attackValue = attackValue;
     }
 
     public String getType() {
@@ -18,5 +20,16 @@ public abstract class Vehicle {
 
     public void setHealthValue(int healthValue) {
         this.healthValue = healthValue;
+    }
+
+//    public abstract void attack(Kaiju kaiju);
+
+    public void attack(Kaiju kaiju){
+        int damage = kaiju.healthValue - this.attackValue;
+        kaiju.setHealthValue(damage);
+    }
+
+    public int getAttackValue() {
+        return this.attackValue;
     }
 }

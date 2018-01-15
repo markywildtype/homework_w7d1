@@ -11,7 +11,7 @@ public class GiantLizardTest {
     @Before
     public void before(){
         gojira = new GiantLizard("Gojira", 100, 25);
-        jeep = new Jeep("Jeep", 50);
+        jeep = new Jeep("Jeep", 50, 10);
     }
 
     @Test
@@ -38,5 +38,10 @@ public class GiantLizardTest {
     public void canAttack(){
         gojira.attack(jeep);
         assertEquals(25, jeep.getHealthValue());
+    }
+
+    @Test
+    public void canMove(){
+        assertEquals("Gojira STOMP!", gojira.move());
     }
 }

@@ -8,4 +8,8 @@ public class Dragon extends Kaiju {
         return this.name + " " + super.roar();
     }
 
+    public String move(){
+        return this.name + " FLYYY!";
+    }
+
 }

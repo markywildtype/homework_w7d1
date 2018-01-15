@@ -11,7 +11,7 @@ public class DragonTest {
     @Before
     public void before(){
         rodan = new Dragon("Rodan", 100, 15);
-        tank = new Tank("Tank", 80);
+        tank = new Tank("Tank", 80, 20);
     }
 
     @Test
@@ -38,5 +38,10 @@ public class DragonTest {
     public void canAttack(){
         rodan.attack(tank);
         assertEquals(65, tank.getHealthValue());
+    }
+
+    @Test
+    public void canMove(){
+        assertEquals("Rodan FLYYY!", rodan.move());
     }
 }

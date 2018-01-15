@@ -6,10 +6,12 @@ import static org.junit.Assert.assertEquals;
 public class JeepTest {
 
     Jeep jeep;
+    Kaiju gojira;
 
     @Before
     public void before(){
-        jeep = new Jeep("Jeep", 50);
+        jeep = new Jeep("Jeep", 50, 10);
+        gojira = new GiantLizard("Gojira", 100, 25);
     }
 
     @Test
@@ -20,5 +22,16 @@ public class JeepTest {
     @Test
     public void hasHealthValue(){
         assertEquals(50, jeep.getHealthValue());
+    }
+
+    @Test
+    public void hasAttackValue(){
+        assertEquals(10, jeep.getAttackValue());
+    }
+
+    @Test
+    public void canAttack(){
+        jeep.attack(gojira);
+        assertEquals(90, gojira.getHealthValue());
     }
 }
